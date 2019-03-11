@@ -1,1 +1,4 @@
-# Ghana-Weather-App
+# Midterm Updates
+
+*Vector*
+

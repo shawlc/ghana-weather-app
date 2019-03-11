@@ -1,0 +1,965 @@
+var ghanaCities = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2295385,
+        "name": "Shama Junction",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.63011,
+          5.00872
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2295672,
+        "name": "Saltpond",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.06058,
+          5.20913
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2301400,
+        "name": "Dunkwa",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.77995,
+          5.96562
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2294305,
+        "name": "Twinsisim",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.16135,
+          6.13009
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2299978,
+        "name": "Kabalima",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.26086,
+          8.9561
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2297503,
+        "name": "Nawari",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.26667,
+          10.21667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2303726,
+        "name": "Avelete",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.2846,
+          6.33311
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2293801,
+        "name": "Yendi",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.00991,
+          9.44272
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2294034,
+        "name": "Winneba",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.62313,
+          5.35113
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2294206,
+        "name": "Wa",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.50192,
+          10.06069
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2294665,
+        "name": "Teshi",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.10722,
+          5.58365
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2294700,
+        "name": "Tema",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.01657,
+          5.66698
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2294727,
+        "name": "Techiman",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.94137,
+          7.58616
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2294768,
+        "name": "Tarkwa",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.98474,
+          5.30644
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2294962,
+        "name": "Swedru",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.69984,
+          5.53711
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2295021,
+        "name": "Sunyani",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.32676,
+          7.33991
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2295065,
+        "name": "Suhum",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.45004,
+          6.04089
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2294076,
+        "name": "Western Region",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.5,
+          5.5
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2295458,
+        "name": "Sekondi-Takoradi",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.7137,
+          4.934
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2295517,
+        "name": "Savelugu",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.8253,
+          9.62441
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2295684,
+        "name": "Salaga",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.51875,
+          8.55083
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2295840,
+        "name": "Prestea",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.14284,
+          5.43274
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2296458,
+        "name": "Kasoa",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.4224,
+          5.53302
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2296564,
+        "name": "Akim Oda",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.99507,
+          5.92313
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2297141,
+        "name": "Nsawam",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.35026,
+          5.80893
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2297313,
+        "name": "Nkawkaw",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.7662,
+          6.55121
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2297505,
+        "name": "Navrongo",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.0921,
+          10.89557
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2298264,
+        "name": "Mampong",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.4001,
+          7.06273
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2298330,
+        "name": "Madina",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.16413,
+          5.68234
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2299233,
+        "name": "Kpandu",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.29306,
+          6.99536
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2299349,
+        "name": "Konongo",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.21667,
+          6.61667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2299625,
+        "name": "Kintampo",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.73058,
+          8.05627
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2299645,
+        "name": "Keta",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.9879,
+          5.91793
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2300372,
+        "name": "Hohoe",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.47362,
+          7.15181
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2300379,
+        "name": "Ho",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.46667,
+          6.6
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2300883,
+        "name": "Foso",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.28657,
+          5.70119
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2301190,
+        "name": "Elmina",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.34804,
+          5.08981
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2301217,
+        "name": "Ejura",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.35617,
+          7.38558
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2302357,
+        "name": "Cape Coast",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.2466,
+          5.10535
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2303060,
+        "name": "Bibiani",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.31938,
+          6.46346
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2303125,
+        "name": "Berekum",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.58404,
+          7.4534
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2303287,
+        "name": "Bawku",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.24168,
+          11.0616
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2303611,
+        "name": "Axim",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.24046,
+          4.86992
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2304389,
+        "name": "Apam",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.73711,
+          5.28483
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2304548,
+        "name": "Anloga",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.89728,
+          5.79473
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2304931,
+        "name": "Akwatia",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.80876,
+          6.04024
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2305537,
+        "name": "Agogo",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.08193,
+          6.80004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2293721,
+        "name": "Yunyo",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0074,
+          10.47494
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2298890,
+        "name": "Kumasi",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.62443,
+          6.68848
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2306104,
+        "name": "Accra",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1969,
+          5.55602
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2294877,
+        "name": "Tamale",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.8393,
+          9.40078
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2294342,
+        "name": "Tumu",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.97911,
+          10.87645
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2299522,
+        "name": "Koforidua",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.25913,
+          6.09408
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2302821,
+        "name": "Bolgatanga",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.85139,
+          10.78556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2299236,
+        "name": "Kpandae",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.01127,
+          8.46885
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2299636,
+        "name": "Kibi",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.55376,
+          6.16494
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2299642,
+        "name": "Kete Krachi",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0498,
+          7.79391
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2301464,
+        "name": "Duayaw Nkwanta",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.1028,
+          7.17242
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2303224,
+        "name": "Bekwai",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.57741,
+          6.45335
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2305027,
+        "name": "Akropong",
+        "country": "GH",
+        "value": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.08542,
+          5.97462
+        ]
+      }
+    }
+  ]
+}
