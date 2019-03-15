@@ -26,4 +26,4 @@ var interpolation = turf.interpolate(ghanaCities, 5, options);
 //   return arr
 // }
 //
-// var range = heatRange(maxInter,minInter,6)
+// var range = heatRange(maxInter,minInter,8)
