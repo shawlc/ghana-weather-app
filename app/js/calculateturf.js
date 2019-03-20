@@ -11,9 +11,16 @@ turf.featureEach(ghanaCities, function(point) {
     }
 });
 
-var options = {gridType: 'points', property: "precip", units: 'miles'};
+var options = {gridType: 'square', property: "precip", units: 'miles'};
 
-var interpolation = turf.interpolate(ghanaCities, 5, options);
+var squareinter = turf.interpolate(ghanaCities, 5, options);
+
+var simplified = turf.simplify(ghanaBorder, {tolerance: 0.05, highQuality: false});
+var new_border = turf.bboxClip(simplified, [-3.49639, 4.86992, 0.9879, 11.0616]);
+
+
+var ghana_grid = turf.pointGrid([-3.411707, 4.5947988958, 1.316302727, 11.3081978], 5, {units: 'miles', mask:new_border});
+var interpolation = turf.tag(ghana_grid, squareinter, 'precip', 'precip');
 
 // var maxInter = Math.max.apply(Math,_.map(interpolation.features,function(elem){return elem.properties.precip}))
 // var minInter = Math.min.apply(Math,_.map(interpolation.features,function(elem){return elem.properties.precip}))

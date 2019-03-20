@@ -1,7 +1,9 @@
 function weatherInfo(darkData, name, lat, lon){
+  var latd = lat.toFixed(6)
+  var lond = lon.toFixed(6)
 
   var staticMap = () => {
-    var url = "https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/url-https%3A%2F%2Fwww.mapbox.com%2Fimg%2Frocket.png("+lon+","+lat+")/"+lon+","+lat+",15/250x250?access_token=pk.eyJ1IjoibGVvc2hhdzU3IiwiYSI6ImNqdDNndm1pZTJhM3Q0NG9zYW41ZzBoNDEifQ.tKNCXe9vMN94CtgABlIjPg"
+    var url = "https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/url-https%3A%2F%2Fi.imgur.com%2FFZZtcXI.png("+lond+","+latd+")/"+lond+","+latd+",15/250x250?access_token=pk.eyJ1IjoibGVvc2hhdzU3IiwiYSI6ImNqdDNndm1pZTJhM3Q0NG9zYW41ZzBoNDEifQ.tKNCXe9vMN94CtgABlIjPg"
     $('#static').append("<img id = 'staticmap' src='"+url+"' style=''>")
   //   $.ajax("https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/url-https%3A%2F%2Fwww.mapbox.com%2Fimg%2Frocket.png(-76.9,38.9)/-76.9,38.9,15/1000x1000?access_token=pk.eyJ1IjoibGVvc2hhdzU3IiwiYSI6ImNqdDNndm1pZTJhM3Q0NG9zYW41ZzBoNDEifQ.tKNCXe9vMN94CtgABlIjPg").done(function(ajaxResponseValue) {
   // // a function that does some kind of transformation on the response
@@ -11,17 +13,13 @@ function weatherInfo(darkData, name, lat, lon){
   //   })
   }
 
-  var current = (currentData) => {
-    var celsius = (currentData.temperature - 32) * 5/9
-    $('#geoinfo').append("<div class='current' style='float:left'>" +  celsius.toFixed(2) + " &deg;C</div>")
-    $('#geoinfo').append("<div class='current' style='float:left'>" + currentData.precipIntensity + " mm per hr</div>")
-  }
-
-  var nArr = name.split(", ")
-  var bottom = nArr.length-4
-  if (bottom < 0){bottom = 0}
-  var nameArr = nArr.slice(bottom,nArr.length)
   var nameTitle = () => {
+    var nArr = name.split(", ")
+    var bottom = nArr.length-4
+    if (bottom < 0){bottom = 0}
+    var nameArr = nArr.slice(bottom,nArr.length)
+
+    $('#location').append("<div id='locale'></div>")
     $('#locale').append("<h2 class='name' style='float:left;margin:0px;padding:5px;display:inline'>" +  nArr[0] + "</h2>")
     $('#locale').append("<div class='name' id='nameblock' style='float:left;padding:10px;'></div>")
     for(var i=1;i<nameArr.length;i++){
@@ -29,18 +27,29 @@ function weatherInfo(darkData, name, lat, lon){
     }
   }
 
+  var current = (currentData) => {
+    var celsius = (currentData.temperature - 32) * 5/9
+    $('#geoinfo').append("<div class='current' style='float:left'>" +  celsius.toFixed(2) + " &deg;C</div>")
+    $('#geoinfo').append("<div class='current' style='float:left'>      Precipitation: " + currentData.precipIntensity + " mm per hr</div>")
+    $('#summary').append("<div class='current' style='clear:both'>Current Weather: " +  currentData.summary + "</div>")
+  }
+
+  var daily = (dailyData) => {
+    $('#summary').append("<div class='daily' style='width:280px;text-align:left;'>Weekly Forecast: " +  dailyData.summary + "</div>")
+  }
 
   var cleanup = () => {
     $('#staticmap').remove()
     $('.current').remove()
     $('.name').remove()
+    $('.daily').remove()
   }
 
   cleanup()
   staticMap()
   nameTitle()
   current(darkData.currently)
-
+  daily(darkData.daily)
 }
 
 

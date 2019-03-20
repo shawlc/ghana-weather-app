@@ -1,15 +1,22 @@
-/* =====================
-  Set up our map
-===================== */
+var serveGeotiff = function() {
+    geoURL = "http://localhost:8080/geoserver/gwc/service/wmts?REQUEST=GetTile&SERVICE=WMTS&VERSION=1.0.0&LAYER=geotiff:elevation&STYLE=&TILEMATRIX=EPSG:900913:{z}&TILEMATRIXSET=EPSG:900913&FORMAT=image/png&TILECOL={x}&TILEROW={y}"
 
-// var map = L.map('map', {
-//   center: [8, -1.26],
-//   zoom: 7
-// });
-// L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-//   attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-// }).addTo( map );
-// starting zoom
+    map.addSource('Elevation-Data', {
+      'type': 'raster',
+      'tiles': [
+        geoURL
+      ],
+      'tileSize': 256
+    });
+
+      map.addLayer({
+      'id': 'Elevation',
+      'type': 'raster',
+      'source': 'Elevation-Data',
+      'paint': {}
+      });
+
+}
 
 var tileset = 'examples.map-i86nkdio';
 var map = new mapboxgl.Map({
@@ -46,7 +53,7 @@ ghanaCities.features.forEach(function(marker) {
     .setPopup(new mapboxgl.Popup({
 
       }) // add popups
-      .setHTML('<h2>' + marker.properties.name + '</h2><p>' + tempCelsius + " : " + weatherDesc + '</p>'))
+      .setHTML('<h4>' + marker.properties.name + '</h4><p>' + tempCelsius + " : " + weatherDesc + '</p>'))
     .addTo(map);
   }
 });
@@ -85,152 +92,38 @@ map.on('load', function() {
     "data": interpolation
   });
 
-//   map.addLayer({
-//   'id': 'wms-test-layer',
-//   'type': 'raster',
-//   'source': {
-//     'type': 'raster',
-//     'tiles': [
-//       "http://localhost:8080/geoserver/gwc/service/wmts?REQUEST=GetTile&SERVICE=WMTS&VERSION=1.0.0&LAYER=geotiff:Altitude&STYLE=&TILEMATRIX=EPSG:2136:{z}&TILEMATRIXSET=EPSG:2136&FORMAT=image/png&TILECOL={x}&TILEROW={y}"
-//     ],
-//     'tileSize': 256
-//   },
-//   'paint': {}
-// }, 'aeroway-taxiway');
+  serveGeotiff()
 
-//   map.addLayer({
-//   'id': 'state-population',
-//   'source': 'interpolation',
+
+  // map.addLayer({
+  //   'id': 'Landcover',
+  //   'type': 'raster',
+  //   'source': {
+  //   'type': 'raster',
+  //   'tiles': [
+  //     "http://localhost:8080/geoserver/gwc/service/wmts?REQUEST=GetTile&SERVICE=WMTS&VERSION=1.0.0&LAYER=geotiff:landcover&STYLE=&TILEMATRIX=EPSG:900913:{z}&TILEMATRIXSET=EPSG:900913&FORMAT=image/png&TILECOL={x}&TILEROW={y}"
+  //   ],
+  //   'tileSize': 256
+  // },
+  // 'paint': {}
+  // }, '');
+
+// map.addSource('border', {
+//   "type": "geojson",
+//   "data": simplified
+// });
+//
+// map.addLayer({
+//   'id': 'maine',
 //   'type': 'fill',
+//   'source': "border",
+//   'layout': {},
 //   'paint': {
-//     'fill-color': [
-//       'interpolate',
-//       ['linear'],
-//       ['get', 'population'],
-//       0, '#F2F12D',
-//       500000, '#EED322',
-//       750000, '#E6B71E',
-//       1000000, '#DA9C20',
-//       2500000, '#CA8323',
-//       5000000, '#B86B25',
-//       7500000, '#A25626',
-//       10000000, '#8B4225',
-//       25000000, '#723122'
-//     ],
-//     'fill-opacity': 0.75
+//     'fill-color': '#088',
+//     'fill-opacity': 0.8
 //   }
-// }, 'waterway-label');
-//
-  })
+// });
 
 
 
-//
-//   map.addLayer({
-//     "id": "inter-heat",
-//     "type": "heatmap",
-//     "source": "interpolation",
-//     "maxzoom": 9,
-//     "paint": {
-//       // Increase the heatmap weight based on frequency and property precipitation
-//       "heatmap-weight": [
-//         "interpolate",
-//         ["linear"],
-//         ["get", "precip"],
-//         0, 0,
-//         6, 1
-//       ],
-//       // Increase the heatmap color weight weight by zoom level
-//       // heatmap-intensity is a multiplier on top of heatmap-weight
-//       "heatmap-intensity": [
-//         "interpolate",
-//         ["linear"],
-//         ["zoom"],
-//         0, 1,
-//         9, 3
-//       ],
-//       // Color ramp for heatmap.  Domain is 0 (low) to 1 (high).
-//       // Begin color ramp at 0-stop with a 0-transparancy color
-//       // to create a blur-like effect.
-//       "heatmap-color": [
-//         "interpolate",
-//         ["linear"],
-//         ["heatmap-density"],
-//         0, "rgba(33,102,172,0)",
-//         0.2, "rgb(103,169,207)",
-//         0.4, "rgb(209,229,240)",
-//         0.6, "rgb(253,219,199)",
-//         0.8, "rgb(239,138,98)",
-//         1, "rgb(178,24,43)"
-//       ],
-//       // Adjust the heatmap radius by zoom level
-//       "heatmap-radius": [
-//         "interpolate",
-//         ["linear"],
-//         ["zoom"],
-//         0, 2,
-//         9, 20
-//       ],
-//       // Transition from heatmap to circle layer by zoom level
-//       // "heatmap-opacity": [
-//       //   "interpolate",
-//       //   ["linear"],
-//       //   ["zoom"],
-//       //   7, 1,
-//       //   9, 0
-//       // ],
-//     }
-//   }, 'waterway-label');
-//
-//   map.addLayer({
-//     "id": "inter-point",
-//     "type": "circle",
-//     "source": "interpolation",
-//     "minzoom": 7,
-//     "paint": {
-//       // Size circle radius by earthquake precipnitude and zoom level
-//       "circle-radius": [
-//         "interpolate",
-//         ["linear"],
-//         ["zoom"],
-//         7, [
-//           "interpolate",
-//           ["linear"],
-//           ["get", "precip"],
-//           1, 1,
-//           6, 4
-//         ],
-//         16, [
-//           "interpolate",
-//           ["linear"],
-//           ["get", "precip"],
-//           1, 5,
-//           6, 50
-//         ]
-//       ],
-//       // Color circle by earthquake precipnitude
-//       "circle-color": [
-//         "interpolate",
-//         ["linear"],
-//         ["get", "precip"],
-//         1, "rgba(33,102,172,0)",
-//         2, "rgb(103,169,207)",
-//         3, "rgb(209,229,240)",
-//         4, "rgb(253,219,199)",
-//         5, "rgb(239,138,98)",
-//         6, "rgb(178,24,43)"
-//       ],
-//       "circle-stroke-color": "white",
-//       "circle-stroke-width": 1,
-//       // Transition from heatmap to circle layer by zoom level
-//       "circle-opacity": [
-//         "interpolate",
-//         ["linear"],
-//         ["zoom"],
-//         7, 0,
-//         8, 1
-//       ]
-//     }
-//   }, 'waterway-label');
-//
-// })
+})
