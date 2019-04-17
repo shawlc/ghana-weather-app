@@ -45,6 +45,16 @@
 	padding: 10px 20px 10px 0px;
 	float:left;
 }
+
+#temp_precip{
+  font-weight: 650;
+  font-size: 16px;
+  background: linear-gradient(to bottom right, rgb(206, 17, 38), rgb(252, 209, 22), rgb(0, 107, 63));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  height: 35px;
+}
+
 #staticmap{
 	margin:auto;
 	left:50%;

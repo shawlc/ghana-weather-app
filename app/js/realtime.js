@@ -16,7 +16,7 @@ var updateLiveData = function(){
 
     var lastTime = moment(window.localStorage.getItem("lastTime")).toDate()
 
-    if(currentTime - lastTime > oneMin){
+    if(currentTime - lastTime > oneMin || !(window.localStorage.getItem("lastTime"))){
       window.localStorage.setItem('lastTime', currentTime);
       console.log("Updating OpenWeatherMap Data!")
 

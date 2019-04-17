@@ -29,8 +29,8 @@ function weatherInfo(darkData, name, lat, lon){
 
   var current = (currentData) => {
     var celsius = (currentData.temperature - 32) * 5/9
-    $('#geoinfo').append("<div class='current' style='float:left'>" +  celsius.toFixed(2) + " &deg;C</div>")
-    $('#geoinfo').append("<div class='current' style='float:left'>      Precipitation: " + currentData.precipIntensity + " mm per hr</div>")
+    $('#geoinfo').append("<div class='current' id='temp_precip' style='float:left'>" +  celsius.toFixed(2) + " &deg;C</div>")
+    $('#geoinfo').append("<div class='current' id='temp_precip' style='float:left'>      Precipitation: " + currentData.precipIntensity + " mm per hr</div>")
     $('#summary').append("<div class='current' style='clear:both'>Current Weather: " +  currentData.summary + "</div>")
   }
 
@@ -40,6 +40,7 @@ function weatherInfo(darkData, name, lat, lon){
 
   var cleanup = () => {
     $('#staticmap').remove()
+    $('#locale').remove()
     $('.current').remove()
     $('.name').remove()
     $('.daily').remove()

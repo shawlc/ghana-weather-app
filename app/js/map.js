@@ -38,6 +38,16 @@ var capitalize = function(str) {
 }
 
 ghanaCities.features.forEach(function(marker) {
+
+  var makeMarker = function(stringHTML) {
+    return new mapboxgl.Marker(elem)
+      .setLngLat(marker.geometry.coordinates)
+      .setPopup(new mapboxgl.Popup({
+        }) // add popups
+        .setHTML(stringHTML))
+      .addTo(map);
+  }
+
   // create a HTML element for each feature
   if (marker.properties.country == "GH"){
   var elem = document.createElement('img');
@@ -45,16 +55,15 @@ ghanaCities.features.forEach(function(marker) {
 
   // make a marker for each feature and add to the map
   var weatherDesc = capitalize(marker.properties.value.weather[0].description)
-
   var tempCelsius = String(parseInt(parseFloat(marker.properties.value.main.temp) - 273.15)) + " &deg;C"
+  var iconMarker = ""
 
-  var iconMarker = new mapboxgl.Marker(elem)
-    .setLngLat(marker.geometry.coordinates)
-    .setPopup(new mapboxgl.Popup({
-
-      }) // add popups
-      .setHTML('<h4>' + marker.properties.name + '</h4><p>' + tempCelsius + " : " + weatherDesc + '</p>'))
-    .addTo(map);
+  if(marker.properties.value.rain){
+    iconMarker = makeMarker('<h4>' + marker.properties.name + '</h4><p>' + tempCelsius + " : " + weatherDesc + '</p><p>' + marker.properties.value.rain["3h"] + " mm of rain" + '</p>')
+  }
+  else{
+    makeMarker('<h4>' + marker.properties.name + '</h4><p>' + tempCelsius + " : " + weatherDesc + '</p>')
+  }
   }
 });
 
@@ -77,53 +86,54 @@ map.on('load', function() {
     "data": markerPoint
   });
 
-  map.addLayer({
-    "id": "point",
-    "source": "single-point",
-    "type": "circle",
-    "paint": {
-      "circle-radius": 10,
-      "circle-color": "#007cbf"
-    }
-  });
-
   map.addSource('interpolation', {
     "type": "geojson",
     "data": interpolation
   });
 
-  serveGeotiff()
+  map.loadImage('https://i.imgur.com/FZZtcXI.png', function(error, image) {
+    if (error) throw error;
+    map.addImage('nsuicon', image);
+    map.addLayer({
+      "id": "iconlayer",
+      "type": "symbol",
+      "source": "single-point",
+      "layout": {
+        "icon-image": "nsuicon",
+        "icon-size": 1
+      },
+      "minzoom": 10
+    });
+  });
 
+  map.addLayer({
 
-  // map.addLayer({
-  //   'id': 'Landcover',
-  //   'type': 'raster',
-  //   'source': {
-  //   'type': 'raster',
-  //   'tiles': [
-  //     "http://localhost:8080/geoserver/gwc/service/wmts?REQUEST=GetTile&SERVICE=WMTS&VERSION=1.0.0&LAYER=geotiff:landcover&STYLE=&TILEMATRIX=EPSG:900913:{z}&TILEMATRIXSET=EPSG:900913&FORMAT=image/png&TILECOL={x}&TILEROW={y}"
-  //   ],
-  //   'tileSize': 256
-  // },
-  // 'paint': {}
-  // }, '');
+    "id": "Rain Heatmap",
+    "type": "heatmap",
+    "source": "interpolation",
+    "paint": {
+      // Increase the heatmap weight based on frequency and property precipitation
+      "heatmap-weight": [
+        "interpolate",
+        ["linear"],
+        ["get", "precip"],
+        0, 0,
+        6, 1
+      ],
+      "heatmap-color": [
+        "interpolate",
+        ["linear"],
+        ["heatmap-density"],
+        0, "rgba(33,102,172,0)",
+        0.2, "rgb(103,169,207)",
+        0.4, "rgb(209,229,240)",
+        0.6, "rgb(253,219,199)",
+        0.8, "rgb(239,138,98)",
+        1, "rgb(178,24,43)"
+      ],
+    }
+  });
 
-// map.addSource('border', {
-//   "type": "geojson",
-//   "data": simplified
-// });
-//
-// map.addLayer({
-//   'id': 'maine',
-//   'type': 'fill',
-//   'source': "border",
-//   'layout': {},
-//   'paint': {
-//     'fill-color': '#088',
-//     'fill-opacity': 0.8
-//   }
-// });
-
-
-
+  toggleLayers()
+  //serveGeotiff()
 })
