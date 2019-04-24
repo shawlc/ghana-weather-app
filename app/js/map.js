@@ -1,20 +1,36 @@
 var serveGeotiff = function() {
-    geoURL = "http://localhost:8080/geoserver/gwc/service/wmts?REQUEST=GetTile&SERVICE=WMTS&VERSION=1.0.0&LAYER=geotiff:elevation&STYLE=&TILEMATRIX=EPSG:900913:{z}&TILEMATRIXSET=EPSG:900913&FORMAT=image/png&TILECOL={x}&TILEROW={y}"
+    elev_geoURL = "http://localhost:8080/geoserver/gwc/service/wmts?REQUEST=GetTile&SERVICE=WMTS&VERSION=1.0.0&LAYER=geotiff:elevation&STYLE=&TILEMATRIX=EPSG:900913:{z}&TILEMATRIXSET=EPSG:900913&FORMAT=image/png&TILECOL={x}&TILEROW={y}"
+    // land_geoURL = "http://localhost:8080/geoserver/gwc/service/wmts?REQUEST=GetTile&SERVICE=WMTS&VERSION=1.0.0&LAYER=geotiff:landcover&STYLE=&TILEMATRIX=EPSG:900913:{z}&TILEMATRIXSET=EPSG:900913&FORMAT=image/png&TILECOL={x}&TILEROW={y}"
+
+    // map.addSource('Landcover-Data', {
+    //   'type': 'raster',
+    //   'tiles': [
+    //     land_geoURL
+    //   ],
+    //   'tileSize': 256
+    // });
 
     map.addSource('Elevation-Data', {
       'type': 'raster',
       'tiles': [
-        geoURL
+        elev_geoURL
       ],
       'tileSize': 256
     });
 
-      map.addLayer({
-      'id': 'Elevation',
-      'type': 'raster',
-      'source': 'Elevation-Data',
-      'paint': {}
-      });
+    // map.addLayer({
+    // 'id': 'Landcover',
+    // 'type': 'raster',
+    // 'source': 'Landcover-Data',
+    // 'paint': {}
+    // });
+
+    map.addLayer({
+    'id': 'Elevation',
+    'type': 'raster',
+    'source': 'Elevation-Data',
+    'paint': {}
+    });
 
 }
 
@@ -106,34 +122,6 @@ map.on('load', function() {
     });
   });
 
-  map.addLayer({
-
-    "id": "Rain Heatmap",
-    "type": "heatmap",
-    "source": "interpolation",
-    "paint": {
-      // Increase the heatmap weight based on frequency and property precipitation
-      "heatmap-weight": [
-        "interpolate",
-        ["linear"],
-        ["get", "precip"],
-        0, 0,
-        6, 1
-      ],
-      "heatmap-color": [
-        "interpolate",
-        ["linear"],
-        ["heatmap-density"],
-        0, "rgba(33,102,172,0)",
-        0.2, "rgb(103,169,207)",
-        0.4, "rgb(209,229,240)",
-        0.6, "rgb(253,219,199)",
-        0.8, "rgb(239,138,98)",
-        1, "rgb(178,24,43)"
-      ],
-    }
-  });
-
-  toggleLayers()
-  //serveGeotiff()
+  //toggleLayers()
+  serveGeotiff()
 })
