@@ -1,39 +1,3 @@
-var serveGeotiff = function() {
-    elev_geoURL = "http://localhost:8080/geoserver/gwc/service/wmts?REQUEST=GetTile&SERVICE=WMTS&VERSION=1.0.0&LAYER=geotiff:elevation&STYLE=&TILEMATRIX=EPSG:900913:{z}&TILEMATRIXSET=EPSG:900913&FORMAT=image/png&TILECOL={x}&TILEROW={y}"
-    // land_geoURL = "http://localhost:8080/geoserver/gwc/service/wmts?REQUEST=GetTile&SERVICE=WMTS&VERSION=1.0.0&LAYER=geotiff:landcover&STYLE=&TILEMATRIX=EPSG:900913:{z}&TILEMATRIXSET=EPSG:900913&FORMAT=image/png&TILECOL={x}&TILEROW={y}"
-
-    // map.addSource('Landcover-Data', {
-    //   'type': 'raster',
-    //   'tiles': [
-    //     land_geoURL
-    //   ],
-    //   'tileSize': 256
-    // });
-
-    map.addSource('Elevation-Data', {
-      'type': 'raster',
-      'tiles': [
-        elev_geoURL
-      ],
-      'tileSize': 256
-    });
-
-    // map.addLayer({
-    // 'id': 'Landcover',
-    // 'type': 'raster',
-    // 'source': 'Landcover-Data',
-    // 'paint': {}
-    // });
-
-    map.addLayer({
-    'id': 'Elevation',
-    'type': 'raster',
-    'source': 'Elevation-Data',
-    'paint': {}
-    });
-
-}
-
 var tileset = 'examples.map-i86nkdio';
 var map = new mapboxgl.Map({
   container: 'map', // container id
@@ -83,45 +47,121 @@ ghanaCities.features.forEach(function(marker) {
   }
 });
 
-var markerPoint = {
-        "type": "FeatureCollection",
-        "features": [{
-          "type": "Feature",
-          "properties": {},
-          "geometry": {
-            "type": "Point",
-            "coordinates": [,]
-          }
-        }]
-      };
+  var markerPoint = {
+          "type": "FeatureCollection",
+          "features": [{
+            "type": "Feature",
+            "properties": {},
+            "geometry": {
+              "type": "Point",
+              "coordinates": [,]
+            }
+          }]
+        };
 
-map.on('load', function() {
+  map.on('load', function() {
 
-  map.addSource('single-point', {
-    "type": "geojson",
-    "data": markerPoint
-  });
-
-  map.addSource('interpolation', {
-    "type": "geojson",
-    "data": interpolation
-  });
-
-  map.loadImage('https://i.imgur.com/FZZtcXI.png', function(error, image) {
-    if (error) throw error;
-    map.addImage('nsuicon', image);
-    map.addLayer({
-      "id": "iconlayer",
-      "type": "symbol",
-      "source": "single-point",
-      "layout": {
-        "icon-image": "nsuicon",
-        "icon-size": 1
-      },
-      "minzoom": 10
+    map.addSource('single-point', {
+      "type": "geojson",
+      "data": markerPoint
     });
+
+    map.addSource('interpolation', {
+      "type": "geojson",
+      "data": interpolation
+    });
+
+    map.loadImage('https://i.imgur.com/FZZtcXI.png', function(error, image) {
+      if (error) throw error;
+      map.addImage('nsuicon', image);
+      map.addLayer({
+        "id": "iconlayer",
+        "type": "symbol",
+        "source": "single-point",
+        "layout": {
+          "icon-image": "nsuicon",
+          "icon-size": 1
+        },
+        "minzoom": 10
+      });
+    });
+
+    map.addLayer({
+
+      "id": "Rain Heatmap",
+      "type": "heatmap",
+      "source": "interpolation",
+      "paint": {
+        // Increase the heatmap weight based on frequency and property precipitation
+        "heatmap-weight": [
+          "interpolate",
+          ["linear"],
+          ["get", "precip"],
+          0, 0,
+          6, 1
+        ],
+        "heatmap-color": [
+          "interpolate",
+          ["linear"],
+          ["heatmap-density"],
+          0, "rgba(33,102,172,0)",
+          0.2, "rgb(103,169,207)",
+          0.4, "rgb(209,229,240)",
+          0.6, "rgb(253,219,199)",
+          0.8, "rgb(239,138,98)",
+          1, "rgb(178,24,43)"
+        ],
+      }
+    });
+
+    map.addSource('gridmap', {
+      "type": "geojson",
+      "data": ghanaGrid
+    });
+
+    map.addLayer({
+      'id': 'Flood Vulnerability',
+      'type': 'fill',
+      'source': 'gridmap',
+      'layout': {},
+      'paint': {'fill-color': [
+    'interpolate',
+    ['linear'],
+    ['get', 'perc_clay'],
+    0, '#F2F12D',
+    5, '#EED322',
+    10, '#E6B71E',
+    15, '#DA9C20',
+    20, '#CA8323',
+    25, '#B86B25',
+    30, '#A25626',
+    35, '#8B4225',
+    40, '#723122'
+  ],
+  'fill-opacity': 0.75
+  }
+    });
+
+  // When a click event occurs on a feature in the states layer, open a popup at the
+  // location of the click, with description HTML from its properties.
+  map.on('click', 'Flood Vulnerability', function(e) {
+    console.log(e.features[0].properties.perc_clay)
+    new mapboxgl.Popup()
+      .setLngLat(e.lngLat)
+      .setHTML('<p>' + e.features[0].properties.perc_clay + '% Clay<p>')
+      .addTo(map);
   });
 
-  //toggleLayers()
-  serveGeotiff()
+  // Change the cursor to a pointer when the mouse is over the states layer.
+  map.on('mouseenter', 'Flood Vulnerability', function() {
+    map.getCanvas().style.cursor = 'pointer';
+  });
+
+  // Change it back to a pointer when it leaves.
+  map.on('mouseleave', 'Flood Vulnerability', function() {
+    map.getCanvas().style.cursor = '';
+  });
+
+
+  toggleLayers()
 })

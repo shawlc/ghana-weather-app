@@ -5,6 +5,7 @@
     <title>Nsut.io - Ghana Weather App</title>
 
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
     <link href="https://fonts.googleapis.com/css?family=Roboto:500" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -12,11 +13,14 @@
     <link rel="stylesheet" href="css/sidebar.css" />
     <link rel="stylesheet" href="css/search.css" />
     <link rel="stylesheet" href="css/toggle.css" />
+    <link rel="stylesheet" href="css/chart.css" />
 
   </head>
   <body>
     <!-- Sidebar -->
     <!-- Map -->
+
+
 
     <div id="sidebar">
       <div id = "title" ><img src="js/images/nsuiconcolor-tiny.png" style="width: 55px;height: 65px;padding: 0px 15px 10px 0px;">Nsut.io</div>
@@ -28,6 +32,7 @@
     </div>
 
     <div id="map" class="map"></div>
+    <!-- <div id="chart"></div> -->
 
     <nav id="menu"></nav>
 
@@ -36,6 +41,8 @@
       <button type="button" onclick="addr_search();" id="addrbutton">Search</button>
       <div id="results"/>
     </div>
+
+
 
 
     <!-- Javascript Imports Here -->
@@ -51,9 +58,12 @@
     <script src="js/ghana_grid.json"></script>
     <script src="js/realtime.js"></script>
     <script src="js/calculateturf.js"></script>
+    <script src="js/togglelayers.js"></script>
     <script src="js/map.js"></script>
     <script src="js/geocode.js"></script>
-    <script src="js/togglelayers.js"></script>
+    <!-- <script src="js/chart.js"></script> -->
+
+
 
 
   </body>
