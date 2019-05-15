@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="shortcut icon" href="js/images/nsuiconcolor-tiny.ico"/>
+    <title>Nsut.io - Ghana Weather App</title>
+
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:500" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="static/css/map.css" />
+    <link rel="stylesheet" href="static/css/sidebar.css" />
+    <link rel="stylesheet" href="static/css/search.css" />
+    <link rel="stylesheet" href="static/css/toggle.css" />
+    <link rel="stylesheet" href="static/css/chart.css" />
+
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <!-- Map -->
+
+
+
+    <div id="sidebar">
+      <div id = "title" ><img src="static/js/images/nsuiconcolor-tiny.png" style="width: 55px;height: 65px;padding: 0px 15px 10px 0px;">Nsut.io</div>
+      <div id = "desc" class = "text">A real-time Ghana weather and flood risk map</div>
+      <div id = static></div>
+      <div id = "location" class = "text"></div>
+      <div id = "geoinfo" class = "text"></div>
+      <div id = "summary" class = "text"></div>
+    </div>
+
+    <div id="map" class="map"></div>
+    <!-- <div id="chart"></div> -->
+
+    <nav id="menu"></nav>
+
+    <div id="search">
+      <input type="text" name="addr" value="" id="addr" size="10" />
+      <button type="button" onclick="addr_search();" id="addrbutton">Search</button>
+      <div id="results"/>
+    </div>
+
+
+
+
+    <!-- Javascript Imports Here -->
+
+    <script> mapboxgl.accessToken = 'pk.eyJ1IjoibGVvc2hhdzU3IiwiYSI6ImNqdDNndm1pZTJhM3Q0NG9zYW41ZzBoNDEifQ.tKNCXe9vMN94CtgABlIjPg' </script>
+    <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js" integrity="sha256-6BZRSENq3kxI4YYBDqJ23xg0r1GwTHEpvp3okdaIqBw=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore.js" integrity="sha256-O4179En8zabOlPYBNvGp8cF0uh0vnSZpW4Q6Ul1h+8c=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="static/js/ghana_border.json"></script>
+    <script src="static/js/ghana_cities.json"></script>
+    <script src="static/js/ghana_grid.json"></script>
+    <script src="static/js/realtime.js"></script>
+    <script src="static/js/calculateturf.js"></script>
+    <script src="static/js/togglelayers.js"></script>
+    <script src="static/js/map.js"></script>
+    <script src="static/js/geocode.js"></script>
+    <!-- <script src="js/chart.js"></script> -->
+
+
+
+
+  </body>
+</html>
