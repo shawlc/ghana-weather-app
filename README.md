@@ -9,7 +9,7 @@ This application also shows the volume of rainfall that collects in the watershe
 This is a Flask application and can be deployed by typing the following commands into your bash terminal:
 
 
-
+...
 
 git clone this repository onto your local machine
 
@@ -30,7 +30,7 @@ pip install schedule
 export FLASK_APP=serve.py
 
 python -m flask run
-
+...
 
 
 
