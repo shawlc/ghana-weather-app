@@ -1,22 +1,25 @@
-var serveGeotiff = function(vol) {
-    elev_geoURL = "/"+vol
 
-    map.addSource('Flood-Data', {
-      'type': 'raster',
-      'tiles': [
-        elev_geoURL
-      ],
-      'tileSize': 256
-    });
+// var mapRender = function(interpolation){
 
-    map.addLayer({
-    'id': 'Flood Model',
-    'type': 'raster',
-    'source': 'Flood-Data',
-    'paint': {}
-    });
+// var serveGeotiff = function(vol) {
+//     elev_geoURL = "/"+vol
+//
+//     map.addSource('Flood-Data', {
+//       'type': 'raster',
+//       'tiles': [
+//         elev_geoURL
+//       ],
+//       'tileSize': 256
+//     });
+//
+//     map.addLayer({
+//     'id': 'Flood Model',
+//     'type': 'raster',
+//     'source': 'Flood-Data',
+//     'paint': {}
+//     });
+// }
 
-}
 var tileset = 'examples.map-i86nkdio';
 var map = new mapboxgl.Map({
   container: 'map', // container id
@@ -36,7 +39,7 @@ var capitalize = function(str) {
   });
 }
 
-ghanaCities.features.forEach(function(marker) {
+allCities.features.forEach(function(marker) {
 
   var makeMarker = function(stringHTML) {
     return new mapboxgl.Marker(elem)
@@ -48,9 +51,9 @@ ghanaCities.features.forEach(function(marker) {
   }
 
   // create a HTML element for each feature
-  if (marker.properties.country == "GH"){
+  if (marker.properties.country == "GH" || marker.properties.country == "BF"){
   var elem = document.createElement('img');
-  elem.src = "http://openweathermap.org/img/w/" + marker.properties.value.weather[0].icon + ".png"
+  elem.src = "https://openweathermap.org/img/w/" + marker.properties.value.weather[0].icon + ".png"
 
   // make a marker for each feature and add to the map
   var weatherDesc = capitalize(marker.properties.value.weather[0].description)
@@ -135,7 +138,7 @@ ghanaCities.features.forEach(function(marker) {
 
     map.addSource('gridmap', {
       "type": "geojson",
-      "data": ghanaGrid
+      "data": clayGrid
     });
 
     map.addLayer({
@@ -161,15 +164,15 @@ ghanaCities.features.forEach(function(marker) {
   }
     });
 
-    map.addSource('Flood-Data', {
+    map.addSource('Bagre Dam', {
       "type": "geojson",
-      "data": "/model/"+totvol
+      "data": bagreDam
     });
 
     map.addLayer({
-    'id': 'Flood Model',
+    'id': 'Bagre Dam Watershed',
     'type': 'fill',
-    'source': 'Flood-Data',
+    'source': 'Bagre Dam',
     'paint': {
       'fill-color': '#088',
       'fill-opacity': 0.8
@@ -179,7 +182,7 @@ ghanaCities.features.forEach(function(marker) {
   // When a click event occurs on a feature in the states layer, open a popup at the
   // location of the click, with description HTML from its properties.
   map.on('click', 'Flood Vulnerability', function(e) {
-    console.log(e.features[0].properties.perc_clay)
+    // console.log(e.features[0].properties.perc_clay)
     new mapboxgl.Popup()
       .setLngLat(e.lngLat)
       .setHTML('<p>' + e.features[0].properties.perc_clay + '% Clay<p>')
@@ -196,6 +199,28 @@ ghanaCities.features.forEach(function(marker) {
     map.getCanvas().style.cursor = '';
   });
 
+  // When a click event occurs on a feature in the states layer, open a popup at the
+  // location of the click, with description HTML from its properties.
+  map.on('click', 'Bagre Dam Watershed', function(e) {
+    // console.log(e.features[0].properties.perc_clay)
+    new mapboxgl.Popup()
+      .setLngLat(e.lngLat)
+      .setHTML('<p>Volume of Water to Bagre Dam : '+totvol.toFixed(2)+' cubic meters<p><p>Average Precipitation in Bagre Dam Watershed : '+avgprecip.toFixed(2)+' mm<p>')
+      .addTo(map);
+  });
+
+  // Change the cursor to a pointer when the mouse is over the states layer.
+  map.on('mouseenter', 'Bagre Dam Watershed', function() {
+    map.getCanvas().style.cursor = 'pointer';
+  });
+
+  // Change it back to a pointer when it leaves.
+  map.on('mouseleave', 'Bagre Dam Watershed', function() {
+    map.getCanvas().style.cursor = '';
+  });
+
 
   toggleLayers()
 })
+
+// }

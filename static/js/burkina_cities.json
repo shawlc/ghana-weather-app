@@ -1,0 +1,725 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+    "type": "Feature",
+    "properties": {
+      "id": 2354349,
+      "name": "Titao",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-2.06667, 13.76667]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 6930703,
+      "name": "Cascades",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-4.76292, 10.65015]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2360615,
+      "name": "Garango",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-0.55056, 11.8]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2358100,
+      "name": "Manga",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-1.07306, 11.66361]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2358382,
+      "name": "Leo",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-2.1, 11.1]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2358738,
+      "name": "Koupela",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-0.35167, 12.17944]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2359142,
+      "name": "Kongoussi",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-1.53472, 13.32583]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2359227,
+      "name": "Kombissiri",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-1.3375, 12.06556]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2359317,
+      "name": "Kokologo",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-1.88556, 12.18972]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2359608,
+      "name": "Kaya",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-1.08444, 13.09167]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2360073,
+      "name": "Hounde",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-3.51667, 11.5]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2360238,
+      "name": "Gourcy",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-2.35, 13.21667]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2361177,
+      "name": "Djibo",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-1.63056, 14.10222]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2361373,
+      "name": "Diapaga",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [1.78889, 12.07083]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2361845,
+      "name": "Bousse",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-1.89222, 12.66056]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2361946,
+      "name": "Boulsa",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-0.57583, 12.6675]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2362909,
+      "name": "Banfora",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-4.76667, 10.63333]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2356410,
+      "name": "Pou00ef",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-2.56667, 11.45]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2353197,
+      "name": "Zorgho",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-0.61583, 12.24889]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 6930705,
+      "name": "Centre-Est",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-0.35706, 11.78922]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2354675,
+      "name": "Tenkodogo",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-0.36972, 11.78]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2356228,
+      "name": "Reo",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-2.46667, 12.31667]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2357043,
+      "name": "Ouahigouya",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-2.42158, 13.58278]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2357163,
+      "name": "Nouna",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-3.86667, 12.73333]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 6930706,
+      "name": "Centre-Nord",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-1.0855, 13.09829]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2361082,
+      "name": "Dori",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-0.0345, 14.0354]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2577164,
+      "name": "Orodara",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-4.93417, 10.94917]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2360286,
+      "name": "Gouloure",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-1.92889, 12.23056]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2357048,
+      "name": "Ouagadougou",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-1.53834, 12.36423]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 6930701,
+      "name": "Boucle du Mouhoun",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-3.47305, 12.47203]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2361477,
+      "name": "Dedougou",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-3.46667, 12.46667]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 6930707,
+      "name": "Centre-Ouest",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-2.36876, 12.25488]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2358946,
+      "name": "Koudougou",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-2.36667, 12.25]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 6930709,
+      "name": "Est",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [0.36349, 12.06308]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2360886,
+      "name": "Fada NGourma",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [0.35778, 12.06222]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 6930711,
+      "name": "Nord",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-2.4212, 13.58809]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2353688,
+      "name": "Yako",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-2.26667, 12.96667]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2353257,
+      "name": "Ziniare",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-1.29833, 12.58222]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 6930710,
+      "name": "Hauts-Bassins",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-4.29634, 11.20804]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2361145,
+      "name": "Dogona",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-4.28035, 11.20476]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2354176,
+      "name": "Tougan",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-3.06667, 13.06667]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 6930714,
+      "name": "Sud-Ouest",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-3.26097, 10.28866]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2577162,
+      "name": "Gaoua",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-3.25083, 10.29917]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 6930713,
+      "name": "Sahel",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-0.04575, 14.03351]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 6930708,
+      "name": "Centre-Sud",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-1.07374, 11.67132]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2356454,
+      "name": "Po",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-1.145, 11.16972]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2354265,
+      "name": "Toma",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-2.88333, 12.76667]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2355404,
+      "name": "Salanso",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-4.08333, 12.18333]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2355548,
+      "name": "Sindou",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-5.16667, 10.66667]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2355803,
+      "name": "Sebba",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [0.53044, 13.43641]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2355869,
+      "name": "Sapouy",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-1.77361, 11.55444]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2356738,
+      "name": "Pama",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [0.7075, 11.24972]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2357012,
+      "name": "Ouargaye",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [0.05722, 11.50333]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2360372,
+      "name": "Gorom Gorom",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-0.23611, 14.44389]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2360541,
+      "name": "Gayeri",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [0.49306, 12.64972]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2361342,
+      "name": "Diebougou",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-3.25, 10.96667]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2361586,
+      "name": "Dano",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-3.06667, 11.15]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2362150,
+      "name": "Boromo",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-2.93333, 11.75]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2362323,
+      "name": "Bogande",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-0.14361, 12.97139]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "id": 2362669,
+      "name": "Batie",
+      "country": "BF",
+      "value": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-2.91667, 9.88333]
+    }
+  }]
+}

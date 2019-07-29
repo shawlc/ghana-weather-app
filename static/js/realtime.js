@@ -1,44 +1,27 @@
+var ghanaCities
+var burkinaCities
 
-var getWeatherData = function(name, idVal) {
-    $.ajax("http://api.openweathermap.org/data/2.5/weather?id="+idVal+"&APPID=cbc32ce70a7e7195d25c0083ef418511").done(function(ajaxResponseValue) {
-    // a function that does some kind of transformation on the response
-    window.localStorage.setItem(name, JSON.stringify(ajaxResponseValue));
-    console.log("Stored " + name + " data")
-    // Logging our computed result (within the body of the ajax function
+var getWeatherData = function(urlpath) {
+    $.ajax(
+      {
+        url : urlpath,
+        async:false
+    }).done(function(ajaxResponseValue) {
+
+      if(urlpath == "/weatherghana"){
+        ghanaCities = JSON.parse(ajaxResponseValue)
+        }
+      else if(urlpath == "/weatherburkina"){
+        burkinaCities = JSON.parse(ajaxResponseValue)
+        }
+
     })
 }
 
-var updateLiveData = function(){
 
-    var currentTime = new Date();
-    console.log("Current time is " + currentTime)
-    var oneMin = 60 * 1000
+getWeatherData("/weatherghana")
+getWeatherData("/weatherburkina")
 
-    var lastTime = moment(window.localStorage.getItem("lastTime")).toDate()
+var allCities = ghanaCities
 
-    if(currentTime - lastTime > oneMin || !(window.localStorage.getItem("lastTime"))){
-      window.localStorage.setItem('lastTime', currentTime);
-      console.log("Updating OpenWeatherMap Data!")
-
-      _.each(ghanaCities["features"], function(city){
-        getWeatherData(city["properties"]["name"],city["properties"]["id"])
-      })
-    }
-    console.log("Stored time is " + window.localStorage.getItem("lastTime"))
-}
-
-var joinCachedData = function(){
-
-  _.each(ghanaCities["features"], function(city){
-
-    var cityName = city["properties"]["name"]
-    var cityStorage = window.localStorage.getItem(cityName)
-
-    city.properties.value = JSON.parse(cityStorage)
-
-  })
-
-}
-
-updateLiveData()
-joinCachedData()
+allCities["features"].push(...burkinaCities["features"])

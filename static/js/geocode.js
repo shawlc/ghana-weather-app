@@ -80,7 +80,7 @@ function chooseAddr(lat1, lng1, lat2, lng2, name) {
 function addr_search() {
     var inp = document.getElementById("addr");
 
-    $.getJSON('http://nominatim.openstreetmap.org/search?format=json&limit=5&q=' + inp.value, function(data) {
+    $.getJSON('https://nominatim.openstreetmap.org/search?format=json&limit=5&q=' + inp.value, function(data) {
         var items = [];
 
         $.each(data, function(key, val) {

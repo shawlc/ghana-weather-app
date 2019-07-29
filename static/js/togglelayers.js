@@ -1,6 +1,6 @@
 var toggleLayers = function(){
 
-  var toggleableLayerIds = ['Rain Heatmap','Flood Vulnerability','Flood Model'];
+  var toggleableLayerIds = ['Rain Heatmap','Flood Vulnerability','Bagre Dam Watershed'];
 
   for (var i = 0; i < toggleableLayerIds.length; i++) {
     var id = toggleableLayerIds[i];
