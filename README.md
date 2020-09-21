@@ -8,7 +8,7 @@ This application also shows the volume of rainfall that collects in the watershe
 
 I developed this application for my Javascript course in Spring 2019 and as my capstone project for the Masters of Science in Applied Geosciences at UPenn.
 
-The app can be viewed at http://leoshaw.pythonanywhere.com/. 
+The app can be viewed at http://leoshaw.pythonanywhere.com/. It may take some time to load when accessing for the first time.
 
 This application uses a Flask backend and can be deployed by typing the following commands into your bash terminal:
 
