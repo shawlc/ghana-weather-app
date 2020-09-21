@@ -36,3 +36,8 @@ python -m flask run
 
 *This application uses hard coded API keys and thus certain layers will not load if the Flask server is running on multiple local machines.*
 *Certain layers and DOM elements are dependent on the websites OpenWeatherMap, DarkSky, and Nominatim being up.*
+
+Here are some screenshots of the app in action:
+
+<img src="app-screenshot1.png" alt="Screenshot of Ghana App" width="500"/> 
+<img src="app-screenshot2.png" alt="Screenshot of Ghana App" width="800"/>
